@@ -109,8 +109,8 @@ function App() {
   let bankMode = bank === 'bankOne' ? bankOne : bankTwo;
   return (
   <ThemeProvider theme={theme}>
-    <div style={{ height:"100vh", display:"flex", justifyContent: "center", alignItems:"center", backgroundColor:"#1c1b1b"}}>
-     <Container id="drum-machine">
+    <div id="drum-machine" style={{ height:"100vh", display:"flex", justifyContent: "center", alignItems:"center", backgroundColor:"#1c1b1b"}}>
+     <Container>
         <Box style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         {(
           <div className={ classes.drumPad }>
@@ -120,6 +120,7 @@ function App() {
               key={item.keyCode}
               drumPad={item.keyTrigger}
               drumId={() => setCurrentPad(item.id)}
+              uniqueId={item.id}
               src={item.url}
               disabled={isDisabled}
               bankOne={bankOne}
@@ -148,7 +149,7 @@ function App() {
           />    
         </div>
           <Display
-            id="display"
+            
             toggleBank={switchBank}
             bank={bank}
             drumPad={currentPad}

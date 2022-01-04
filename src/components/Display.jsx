@@ -15,6 +15,7 @@ const Display = ({ drumPad, disabled }) => {
                 textAlign: 'center',
                 backgroundColor: !disabled ? 'primary.main' : 'action.disabledBackground',                
             }}
+            id="display"
         >
             <Typography variant="h5">
                 {drumPad}

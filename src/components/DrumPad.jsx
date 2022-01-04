@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
@@ -14,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const DrumPad = ({ drumPad, drumId, src, disabled, volume }) => {
+const DrumPad = ({ drumPad, drumId, src, disabled, volume, uniqueId }) => {
 
 const classes = useStyles();
 let audioEl = useRef(null);
@@ -45,13 +46,14 @@ return (
         variant="contained"
         onClick={handleClick}
         disabled={disabled}
-        className={classes.root}
+        id={uniqueId}
+        className={clsx(classes.root,'drum-pad')}
         sx={{
             fontSize:25
         }}
         >
        {drumPad}
-       <audio ref={audioEl} src={src} className="clip"></audio>
+       <audio ref={audioEl} src={src} className="clip" id={drumPad}></audio>
     </Button>
     )
 }
