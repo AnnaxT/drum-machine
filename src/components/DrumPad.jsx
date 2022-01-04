@@ -41,6 +41,22 @@ const handleClick = () => {
     playSound();
 }
 
+const handleKeyDown = (e) => {
+    if (e.key === drumPad || e.key.toUpperCase() === drumPad) {
+        drumId();
+        playSound();
+    }
+}
+
+useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    // clean up
+    return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+    };
+},[]);
+
 return (
     <Button
         variant="contained"
