@@ -8,7 +8,12 @@ const useStyles = makeStyles( theme => ({
 
         [`${theme.breakpoints.up('sm')} and (orientation: landscape)`]: {
             flexDirection: 'row',
-            height: '400px',
+            height: '350px',
+            width: '700px',
+        },
+        [`${theme.breakpoints.up('md')} and (orientation: landscape)`]: {
+            flexDirection: 'row',
+            height: '350px',
             width: '700px',
         },
         [`${theme.breakpoints.down('sm')} and (orientation: landscape)`]: {
