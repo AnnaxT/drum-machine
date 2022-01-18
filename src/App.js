@@ -11,6 +11,7 @@ import { makeStyles } from '@mui/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { purple, green } from '@mui/material/colors';
 import { bankOne, bankTwo } from './sounds.js'
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 const useStyles = makeStyles({
@@ -33,6 +34,14 @@ const useStyles = makeStyles({
   },
 });
 
+const wrapper = {
+  height:"100vh",
+  display:"flex",
+  justifyContent: "center",
+  alignItems:"center",
+  backgroundColor:"#1c1b1b",
+}
+
 function App() {
 
   const [color, setColor] = useState(purple);
@@ -49,6 +58,15 @@ function App() {
       primary: {
         main: color[500]
       }
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 700,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
   },
 
 });
@@ -104,9 +122,10 @@ function App() {
     
   };
 
-
+  const matches = useMediaQuery('(orientation: landscape)')
   const classes = useStyles();
   let bankMode = bank === 'bankOne' ? bankOne : bankTwo;
+  
   return (
   <ThemeProvider theme={theme}>
     <div id="drum-machine" style={{ height:"100vh", display:"flex", justifyContent: "center", alignItems:"center", backgroundColor:"#1c1b1b"}}>
@@ -164,7 +183,7 @@ function App() {
           />
         </Box>
      </Container>
-   </div>
+     </div>
    </ThemeProvider>
   );
 }

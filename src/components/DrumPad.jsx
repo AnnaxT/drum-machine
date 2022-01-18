@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 const useStyles = makeStyles(theme => ({
     root: {
         [theme.breakpoints.down('sm')]: {
-            height: '80px',
-            width:'85px',
+            height: '70px',
+            width:'80px',
         },
         height: '90px',
         width:'100px',

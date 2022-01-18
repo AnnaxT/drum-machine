@@ -6,21 +6,35 @@ const useStyles = makeStyles( theme => ({
     root: {
         display: 'flex',
 
-        [theme.breakpoints.down('md')]: {
-            flexDirection: 'column',
-            height: '100%',
-            width: '100%',
-        },
-        [theme.breakpoints.down('sm')]: {
-            flexDirection: 'column',
-            height: '100%',
-            width: '100%',
-        },
-        [theme.breakpoints.up('md')]: {
+        [`${theme.breakpoints.up('sm')} and (orientation: landscape)`]: {
             flexDirection: 'row',
             height: '400px',
             width: '700px',
         },
+        [`${theme.breakpoints.down('sm')} and (orientation: landscape)`]: {
+            flexDirection: 'row',
+            height: '100%',
+            width: '100%',
+        },
+
+        [`${theme.breakpoints.up('sm')} and (orientation: portrait)`]: {
+            flexDirection: 'column',
+            height: '700px',
+            width: '400px',
+        },
+        [`${theme.breakpoints.up('md')} and (orientation: portrait)`]: {
+            flexDirection: 'row',
+            height: '400px',
+            width: '700px',
+        },
+
+        [`${theme.breakpoints.down('sm')} and (orientation: portrait)`]: {
+            flexDirection: 'column',
+            height: '100%',
+            width: '100%',
+        },
+
+       
         justifyContent:'space-evenly',
         alignItems: 'center',
       },
