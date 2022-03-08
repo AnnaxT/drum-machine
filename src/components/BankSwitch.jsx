@@ -13,7 +13,7 @@ const BankSwitch = ({ toggleBank, bank, disabled, checked }) => {
     <div style={{display:"flex", flexDirection:"column" ,justifyContent:"center" }}>
         <Typography variant="h6" align="center">Mode</Typography>
         <FormControlLabel
-            control={<Switch onChange={() => toggleBank()} />}
+            control={<Switch onChange={toggleBank} />}
             label={displayBank}
             labelPlacement="right"
             disabled={disabled}

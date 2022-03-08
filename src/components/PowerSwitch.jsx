@@ -12,7 +12,7 @@ const PowerSwitch = ({ powerOnOff, isOnOff, }) => {
         <div>
             <Typography variant="h6" align="center">Power</Typography>
         <FormControlLabel
-            control={<Switch defaultChecked onChange={() => powerOnOff()}/>}
+            control={<Switch defaultChecked onChange={powerOnOff}/>}
             label={displayOnOff}
             labelPlacement="right"
             />
